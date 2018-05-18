@@ -29,7 +29,7 @@ public class Tatoc_Advanced extends GetPage {
 	String query = null ;
 	String host="10.0.1.86",databaseName="tatoc", username="tatocuser", password="tatoc01";
 	String foundid = null,foundname = null,foundpass = null;
-	ResultSet resultSet,resultSet1;
+	ResultSet resultSet,newresultSet;
 
 	public Tatoc_Advanced(WebDriver driver) {
 		super(driver, "Tatoc_TestData");	
@@ -55,10 +55,10 @@ public class Tatoc_Advanced extends GetPage {
 		   	  foundid = resultSet.getString(1);
 		}
 		query="select name,passkey FROM credentials where id='" + foundid + "'";
-		resultSet1 = DataBaseConnecter.getResultSetOnExecutingASelectQuery(query);
-		if(resultSet1.next()){
-		   	  foundname = resultSet1.getString(1);
-		   	  foundpass = resultSet1.getString(2);
+		newresultSet = DataBaseConnecter.getResultSetOnExecutingASelectQuery(query);
+		if(newresultSet.next()){
+		   	  foundname = newresultSet.getString(1);
+		   	  foundpass = newresultSet.getString(2);
 		}
 		element("name_value").sendKeys(foundname);
 		element("password_value").sendKeys(foundpass);
