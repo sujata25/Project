@@ -30,26 +30,45 @@ public class Tatoc_BasicsAction extends GetPage {
 		this.driver = driver;
 	}
 	
-	public void basic_Course() {
+	public void select_GreenBox() {
 		element("basic_course").click();
 		element("green_box").click();
-		name();
+	}
+	
+	public void select_SameColor() {
+		click_repaintLink();
+	}
+	
+	public void drag_DropElement() {
 		draganddrop (element("drag_box"), element("drop_box"));
 		element("drag_proceed").click();
+	}
+	
+	public void launch_PopUp() {
 		element("launch_popup").click();
 		switchToNewWindow();
 		element("text_window").sendKeys("sujata");
 		assertNotNull(element("text_window").getText());
+	}
+	
+	public void submit_Name() {
 		element("submit_button").click();
 		switchtoOriginalWindow();
 		element("launch_proceed").click();
+	}
+	
+	public void generate_Token() {
 		element("generate_token").click();
 		addCookie("Token",getelementText("token_text"));
+		assertNotSame(getelementText("token_text"), driver.manage().getCookies());
+	}
+	
+	public void finish() {
 		element("launch_proceed").click();
 		Assert.assertEquals(element("finish_msg").getText(), "End");
 	}
 	
-	public void name() {
+	public void click_repaintLink() {
 		switchToDefaultContent();
 		switchToFrame("main_frame");
 		box1Color = element("box_1").getCssValue("background-color");
@@ -65,7 +84,7 @@ public class Tatoc_BasicsAction extends GetPage {
 			switchToDefaultContent();
 			switchToFrame("main_frame");
 			element("repaint_link").click();
-			name();
+			click_repaintLink();
 		}
 	}
 	
@@ -73,7 +92,6 @@ public class Tatoc_BasicsAction extends GetPage {
 	public org.openqa.selenium.Cookie addCookie(String key,String cookieValue){
 		org.openqa.selenium.Cookie cookie = new org.openqa.selenium.Cookie(key, cookieValue);
 		driver.manage().addCookie(cookie);
-		assertNotSame(cookieValue, driver.manage().getCookies());
 		return cookie;
 	}
 

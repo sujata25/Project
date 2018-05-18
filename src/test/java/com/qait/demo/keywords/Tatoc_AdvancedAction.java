@@ -36,18 +36,18 @@ public class Tatoc_AdvancedAction extends GetPage {
 		this.driver = driver;
 	}
 	
-	public void advanced_Course() throws SQLException {
-		
+	public void selectadvanced_Course()  {
 		element("advanced_course").click();
-		element("menu2_select").click();
-		element("gonext_click").click();
-		database_result();
-		element("proceed_button").click();
-		assertEquals(element("video_page_text").getText(),"Ooyala Video Player");
+		
 	}
 	
+	public void select_GoNext() {
+		element("menu2_select").click();
+		element("gonext_click").click();
+
+	}
 	
-	public void database_result() throws SQLException {
+	public void fetch_DatabaseDetails() throws SQLException {
 		DataBaseConnecter.connectToDataBase(host, databaseName, username, password);
 		String value = element("symbol_text").getText();
 		resultSet = DataBaseConnecter.getResultSetOnExecutingASelectQuery("select id from identity where symbol='" + value + "';");
@@ -65,5 +65,12 @@ public class Tatoc_AdvancedAction extends GetPage {
 		Assert.assertNotNull(element("name_value").getText());
 		Assert.assertNotNull(element("password_value").getText());
 	}
+	
+	public void proceedTo_VideoPage() {
+		element("proceed_button").click();
+		assertEquals(element("video_page_text").getText(),"Ooyala Video Player");
+	}
+	
+	
 }
 

@@ -32,16 +32,33 @@ public class Tatoc02_Advanced {
 	//@BeforeClass
 	private void _initVars() {
 		tatoc_url = YamlReader.getYamlValue("baseUrl");
-		
 	}
 
 	@Test
-	public void Tatoc01ClickAdvanced() throws SQLException {
+	public void Tatoc01OpenUrl(){
 		test.openUrl(tatoc_url);
-		test.tatocadvanced.advanced_Course();
 	}
 	
+	@Test
+	public void Tatoc02ClickAdvancedCourse() {
+		test.tatocadvanced.selectadvanced_Course();
+	}
 	
+	@Test
+	public void Tatoc03SelectGoNextOption() {
+		test.tatocadvanced.select_GoNext();
+	}
+	
+	@Test
+	public void Tatoc04FetchDbDetails() throws SQLException {
+		test.tatocadvanced.fetch_DatabaseDetails();
+	}
+	
+	@Test
+	public void Tatoc05Proceed(){
+		test.tatocadvanced.proceedTo_VideoPage();
+	}
+		
 	@AfterClass	  
 	public void closeBrowser() {
 		test.closeBrowserSession();
