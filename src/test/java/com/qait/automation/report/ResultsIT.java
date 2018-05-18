@@ -62,7 +62,7 @@ public class ResultsIT {
     void setupMailConfig() {
     }
 
-    @Test
+    /*@Test
     public void sendResultsMail() throws MessagingException, IOException {
 
         if (true) { // send email is true *************************
@@ -79,7 +79,7 @@ public class ResultsIT {
         }
         System.out.println("Reports emailed");
 
-    }
+    }*/
 
     private Session getSession() {
         Authenticator authenticator = new Authenticator(from, password);

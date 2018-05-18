@@ -15,8 +15,8 @@ import org.testng.Reporter;
 import com.qait.automation.utils.TakeScreenshot;
 import com.qait.demo.keywords.CustomerSetupAction;
 import com.qait.demo.keywords.Login;
-import com.qait.demo.keywords.Tatoc_Advanced;
-import com.qait.demo.keywords.Tatoc_Basics;
+import com.qait.demo.keywords.Tatoc_AdvancedAction;
+import com.qait.demo.keywords.Tatoc_BasicsAction;
 
 public class TestSessionInitiator {
 
@@ -43,8 +43,8 @@ public class TestSessionInitiator {
 	
 	public Login login;
 	public CustomerSetupAction customerSetup;
-	public Tatoc_Basics tatocbasic;
-	public Tatoc_Advanced tatocadvanced;
+	public Tatoc_BasicsAction tatocbasic;
+	public Tatoc_AdvancedAction tatocadvanced;
 
 	public WebDriver getDriver() {
 		return this.driver;
@@ -55,8 +55,8 @@ public class TestSessionInitiator {
 	
 	login = new Login(driver);
 	customerSetup = new CustomerSetupAction(driver);
-	tatocbasic =new Tatoc_Basics(driver);
-	tatocadvanced = new Tatoc_Advanced(driver);
+	tatocbasic =new Tatoc_BasicsAction(driver);
+	tatocadvanced = new Tatoc_AdvancedAction(driver);
 
 	}
 

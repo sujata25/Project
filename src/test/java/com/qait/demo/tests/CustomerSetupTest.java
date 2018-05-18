@@ -89,7 +89,7 @@ public class CustomerSetupTest {
 		String category_name = YamlReader.getYamlValue("category_committee");
 		test.customerSetup.categoryCreation(code, name, category_name, "6");
 		test.customerSetup.deleteCategoryAgainstCodeValue(code);
-	}*/
+	}
 
 	@Test(priority=0)
 	public void Tatoc01ClickBasic() {
@@ -101,7 +101,7 @@ public class CustomerSetupTest {
 	public void Tatoc01ClickAdvanced() throws SQLException {
 		test.openUrl(tatoc_url);
 		test.tatocadvanced.advanced_Course();
-	}
+	}*/
 	
 	
 	@AfterClass	  
