@@ -23,7 +23,6 @@ public class Tatoc_Basics extends GetPage {
 	WebDriver driver;
 	String box1Color,box2Color;
 	Boolean flag;
-	private Object expected;
 
 	public Tatoc_Basics(WebDriver driver) {
 		super(driver, "Tatoc_TestData");	
