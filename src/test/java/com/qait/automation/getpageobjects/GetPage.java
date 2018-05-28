@@ -454,7 +454,7 @@ public class GetPage extends BaseUi {
 	protected void draganddrop(WebElement Sourcelocator, WebElement Destinationlocator) {
 		//verifyElementDisplayed(locator);
 		Actions hoverAction = new Actions(driver);
-		hoverAction.dragAndDrop(Sourcelocator, Destinationlocator).build().perform();;
+		hoverAction.dragAndDrop(Sourcelocator, Destinationlocator).build().perform();
 		logMessage("Action", "Drag element from source location and drop" );
 	}
 	
