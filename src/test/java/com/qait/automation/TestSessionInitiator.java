@@ -13,7 +13,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Reporter;
 
 import com.qait.automation.utils.TakeScreenshot;
-import com.qait.demo.keywords.CustomerSetupAction;
 import com.qait.demo.keywords.Login;
 import com.qait.demo.keywords.Tatoc_AdvancedAction;
 import com.qait.demo.keywords.Tatoc_BasicsAction;
@@ -42,7 +41,6 @@ public class TestSessionInitiator {
 	
 	
 	public Login login;
-	public CustomerSetupAction customerSetup;
 	public Tatoc_BasicsAction tatocbasic;
 	public Tatoc_AdvancedAction tatocadvanced;
 
@@ -54,7 +52,6 @@ public class TestSessionInitiator {
 	
 	
 	login = new Login(driver);
-	customerSetup = new CustomerSetupAction(driver);
 	tatocbasic =new Tatoc_BasicsAction(driver);
 	tatocadvanced = new Tatoc_AdvancedAction(driver);
 
